@@ -13,7 +13,7 @@ runs:
 
   # This installs the latest maelstrom-admin image from GitHub.
   - name: Install maelstrom-admin
-    uses: jaxxstorm/action-install-gh-release@latest
+    uses: jaxxstorm/action-install-gh-release@master
     with:
       repo: maelstrom-software/maelstrom
       asset-name: cargo-maelstrom
