@@ -16,7 +16,7 @@ runs:
     uses: jaxxstorm/action-install-gh-release@master
     with:
       repo: maelstrom-software/maelstrom
-      asset-name: cargo-maelstrom
+      asset-name: maelstrom-admin
       tag: v0.14.0
       cache: enable
 
