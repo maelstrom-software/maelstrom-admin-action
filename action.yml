@@ -1,0 +1,24 @@
+name: 'cargo-maelstrom'
+description: 'Install and configure maelstrom-admin'
+branding:
+  icon: check-circle
+  color: blue
+runs:
+  using: "composite"
+  steps:
+  # This installs the latest maelstrom-admin image from GitHub.
+  - name: Install maelstrom-admin
+    uses: jaxxstorm/action-install-gh-release@v2
+    with:
+      repo: maelstrom-software/maelstrom
+      asset-name: cargo-maelstrom
+      tag: v0.14.0
+      cache: enable
+
+  # This sets some environment variables for cargo-maelstrom.
+  - name: Set Environment Variables for cargo-maelstrom
+    run: |
+      echo "MAELSTROM_CLUSTER_COMMUNICATION_STRATEGY=github" >> "$GITHUB_ENV"
+      echo "MAELSTROM_GITHUB_ACTIONS_TOKEN=${{ env.ACTIONS_RUNTIME_TOKEN }}" >> "$GITHUB_ENV"
+      echo "MAELSTROM_GITHUB_ACTIONS_URL=${{ env.ACTIONS_RESULTS_URL }}" >> "$GITHUB_ENV"
+    shell: bash
