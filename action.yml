@@ -6,9 +6,14 @@ branding:
 runs:
   using: "composite"
   steps:
+  # This is required to get some variables that Maelstrom needs to use the
+  # artifact store.
+  - name: Expose GitHub Action Variables
+    uses: crazy-max/ghaction-github-runtime@v3
+
   # This installs the latest maelstrom-admin image from GitHub.
   - name: Install maelstrom-admin
-    uses: jaxxstorm/action-install-gh-release@v2
+    uses: jaxxstorm/action-install-gh-release@latest
     with:
       repo: maelstrom-software/maelstrom
       asset-name: cargo-maelstrom
