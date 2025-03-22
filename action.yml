@@ -1,4 +1,4 @@
-name: 'cargo-maelstrom'
+name: 'maelstrom-admin'
 description: 'Install and configure maelstrom-admin'
 branding:
   icon: check-circle
@@ -20,8 +20,8 @@ runs:
       tag: v0.14.0
       cache: enable
 
-  # This sets some environment variables for cargo-maelstrom.
-  - name: Set Environment Variables for cargo-maelstrom
+  # This sets some environment variables for maelstrom-admin.
+  - name: Set Environment Variables for maelstrom-admin
     run: |
       echo "MAELSTROM_CLUSTER_COMMUNICATION_STRATEGY=github" >> "$GITHUB_ENV"
       echo "MAELSTROM_GITHUB_ACTIONS_TOKEN=${{ env.ACTIONS_RUNTIME_TOKEN }}" >> "$GITHUB_ENV"
